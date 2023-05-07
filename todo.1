@@ -1,0 +1,52 @@
+.TH TODO 1 todo
+.SH NAME
+todo \- A simple task manager.
+.SH SYNOPSIS
+.B todo <command> [<args> ...]
+.SH DESCRIPTION
+todo helps in managing to-do lists. Lists are plain .txt files located in a
+given folder, with the assumption that each line is a task.
+.P
+Having several lists might help in staying organised: a default list,
+short/mid/long term lists, specific events, themed bookmarks... Grouping lists
+in a given folder helps for making backups, for example with a version control
+system.
+.P
+todo uses $LIST as the default list. If the variable is empty, "main" is used.
+.SH USAGE
+.SS
+Manage lists:
+.TP
+.B todo lists
+display defined lists
+.TP
+.B todo create <list>
+create an empty list named <list>
+.TP
+.B todo remove <list>
+delete the list named <list>
+.TP
+.B echo $LIST
+display the default list name
+.TP
+.B export LIST=<list>
+set the default list to <list>
+.SS
+Manage tasks:
+.TP
+.B todo show [<list>]
+display the tasks of the list
+.TP
+.B todo add "<task>" [<list>]
+add a new task
+.TP
+.B todo del <task_id> [<list>]
+delete a given task
+.TP
+.B todo mv <task_id> [<src_list>] <dest_list>
+move a task to another list
+.P
+When a list name is optionnal and none is provided, the default list is used.
+.P
+When displaying a list, numbers are added to identify each task and be used as
+identifiers when deleting or moving tasks.
